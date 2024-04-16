@@ -1,3 +1,9 @@
+# Features
+Used Angular Reactive Forms, basic Angular routing and sweet alert for popup messages.
+
+# Backend API
+Used dummyjson for authentication => https://dummyjson.com/docs/auth
+
 # Angular17Login
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
