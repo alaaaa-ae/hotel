@@ -1,17 +1,16 @@
-<!-- home.component.html -->
-<div class="hotel-home">
-  <!-- Hero Section -->
-  <div class="hero-section">
+<div class="home-container">
+  <!-- Section hero -->
+  <section class="hero">
     <div class="hero-content">
       <h1>Bienvenue sur notre plateforme de réservation d'hôtel</h1>
       <p>Trouvez l'hôtel parfait pour votre prochain voyage</p>
-      <button routerLink="/chambres" class="cta-button">Voir nos chambres</button>
+      <button class="btn btn-primary" routerLink="/chambres">Voir nos chambres</button>
     </div>
-  </div>
+  </section>
 
-  <!-- Features Section -->
-  <div class="features-section">
-    <div class="feature">
+  <!-- Section avantages -->
+  <section class="features">
+    <div class="feature-card">
       <div class="feature-icon">
         <img src="assets/images/easy-booking.png" alt="Réservation facile">
       </div>
@@ -19,7 +18,7 @@
       <p>Réservez en quelques clics seulement</p>
     </div>
 
-    <div class="feature">
+    <div class="feature-card">
       <div class="feature-icon">
         <img src="assets/images/best-price.png" alt="Meilleurs prix">
       </div>
@@ -27,75 +26,70 @@
       <p>Garantie des prix les plus bas</p>
     </div>
 
-    <div class="feature">
+    <div class="feature-card">
       <div class="feature-icon">
         <img src="assets/images/support.png" alt="Assistance">
       </div>
       <h3>Assistance 24/7</h3>
       <p>Notre équipe est toujours disponible</p>
     </div>
-  </div>
+  </section>
 
-  <!-- Popular Hotels Section -->
-  <div class="popular-hotels">
+  <!-- Section hôtels populaires -->
+  <section class="popular-hotels">
     <h2>Nos hôtels populaires</h2>
-    <div class="hotel-cards">
+    
+    <div class="hotel-list">
       <div class="hotel-card">
-        <div class="hotel-image">
-          <img src="assets/images/hotel1.jpg" alt="Grand Hôtel Paris">
-        </div>
-        <div class="hotel-info">
+        <img src="assets/images/hotel1.jpg" alt="Grand Hôtel Paris" class="hotel-image">
+        <div class="hotel-details">
           <h3>Grand Hôtel Paris</h3>
-          <div class="hotel-rating">
+          <div class="rating">
             <span class="stars">★★★★★</span>
             <span class="reviews">(243 avis)</span>
           </div>
-          <p class="hotel-price">À partir de <strong>120€</strong> / nuit</p>
-          <button routerLink="/chambres" class="book-button">Réserver</button>
+          <p class="price">À partir de <strong>120€</strong> / nuit</p>
+          <button class="btn btn-secondary">Réserver</button>
         </div>
       </div>
 
       <div class="hotel-card">
-        <div class="hotel-image">
-          <img src="assets/images/hotel2.jpg" alt="Résidence Marseille">
-        </div>
-        <div class="hotel-info">
+        <img src="assets/images/hotel2.jpg" alt="Résidence Marseille" class="hotel-image">
+        <div class="hotel-details">
           <h3>Résidence Marseille</h3>
-          <div class="hotel-rating">
+          <div class="rating">
             <span class="stars">★★★★</span>
             <span class="reviews">(187 avis)</span>
           </div>
-          <p class="hotel-price">À partir de <strong>85€</strong> / nuit</p>
-          <button routerLink="/chambres" class="book-button">Réserver</button>
+          <p class="price">À partir de <strong>85€</strong> / nuit</p>
+          <button class="btn btn-secondary">Réserver</button>
         </div>
       </div>
 
       <div class="hotel-card">
-        <div class="hotel-image">
-          <img src="assets/images/hotel3.jpg" alt="Villa Nice">
-        </div>
-        <div class="hotel-info">
+        <img src="assets/images/hotel3.jpg" alt="Villa Nice" class="hotel-image">
+        <div class="hotel-details">
           <h3>Villa Nice</h3>
-          <div class="hotel-rating">
+          <div class="rating">
             <span class="stars">★★★★★</span>
             <span class="reviews">(321 avis)</span>
           </div>
-          <p class="hotel-price">À partir de <strong>150€</strong> / nuit</p>
-          <button routerLink="/chambres" class="book-button">Réserver</button>
+          <p class="price">À partir de <strong>150€</strong> / nuit</p>
+          <button class="btn btn-secondary">Réserver</button>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Newsletter Section -->
-  <div class="newsletter-section">
+  <!-- Section newsletter -->
+  <section class="newsletter">
     <div class="newsletter-content">
       <h2>Recevez nos meilleures offres</h2>
       <p>Inscrivez-vous à notre newsletter pour recevoir des promotions exclusives</p>
       <div class="newsletter-form">
-        <input type="email" placeholder="Votre adresse email">
-        <button>S'inscrire</button>
+        <input type="email" placeholder="Votre adresse email" class="email-input">
+        <button class="btn btn-primary">S'inscrire</button>
       </div>
     </div>
-  </div>
+  </section>
 </div>
