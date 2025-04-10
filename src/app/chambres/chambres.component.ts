@@ -31,7 +31,7 @@ export class ChambresComponent implements OnInit {
         description: 'Une chambre confortable avec lit double, salle de bain privée et vue sur la ville.',
         price: 120,
         capacity: 2,
-        image: 'assets/images/room1.jpg',
+        image: 'assets/images/chambre1.jpg',
         amenities: ['Wi-Fi', 'TV', 'Climatisation', 'Petit-déjeuner']
       },
       {
@@ -40,7 +40,7 @@ export class ChambresComponent implements OnInit {
         description: 'Une chambre spacieuse avec lit king-size, salle de bain luxueuse et vue sur la mer.',
         price: 200,
         capacity: 2,
-        image: 'assets/images/room2.jpg',
+        image: 'assets/images/suite.jpeg',
         amenities: ['Wi-Fi', 'TV écran plat', 'Climatisation', 'Mini-bar', 'Petit-déjeuner']
       },
       {
@@ -49,7 +49,7 @@ export class ChambresComponent implements OnInit {
         description: 'Une suite spacieuse avec deux chambres, parfaite pour les familles.',
         price: 300,
         capacity: 4,
-        image: 'assets/images/room3.jpg',
+        image: 'assets/images/familial.jpeg',
         amenities: ['Wi-Fi', '2 TV', 'Climatisation', 'Espace salon', 'Petit-déjeuner']
       }
     ];
