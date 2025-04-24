@@ -1,6 +1,79 @@
-<div class="panier-container">
-    <h1>Votre panier</h1>
-    <p>Les réservations que vous avez sélectionnées apparaîtront ici.</p>
-    <!-- Le contenu du panier viendra ici -->
-    <p>Contenu en cours de développement...</p>
+<div class="container mt-4">
+  <h1>Votre panier</h1>
+  
+  <div *ngIf="reservations.length === 0" class="empty-cart text-center my-5">
+    <p>Votre panier est vide.</p>
+    <button class="btn btn-primary" (click)="continuerShopping()">Découvrir nos chambres</button>
   </div>
+  
+  <div *ngIf="reservations.length > 0">
+    <!-- Liste des réservations -->
+    <div class="card mb-3" *ngFor="let reservation of reservations">
+      <div class="card-header">
+        <h5>{{ reservation.chambreNom }}</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3">
+            <img [src]="reservation.image" class="img-fluid rounded" alt="{{ reservation.chambreNom }}">
+          </div>
+          <div class="col-md-9">
+            <div *ngIf="editingId !== reservation.id">
+              <p>{{ reservation.chambreNom }}</p>
+              <p>Du {{ formaterDate(reservation.dateArrivee) }} au {{ formaterDate(reservation.dateDepart) }}</p>
+              <p>{{ reservation.nombreNuits }} nuit(s) x {{ reservation.prixParNuit }} MAD</p>
+              <p class="font-weight-bold">Total: {{ reservation.nombreNuits * reservation.prixParNuit }} MAD</p>
+              
+              <div class="mt-3">
+                <button class="btn btn-info mr-2" (click)="commencerEdition(reservation)">Modifier</button>
+                <button class="btn btn-danger" (click)="supprimerReservation(reservation.id)">Supprimer</button>
+              </div>
+            </div>
+            
+            <!-- Formulaire d'édition -->
+            <div *ngIf="editingId === reservation.id" class="edit-form">
+              <div class="form-group">
+                <label for="nombreNuits">Nombre de nuits:</label>
+                <input type="number" class="form-control" id="nombreNuits" [(ngModel)]="nouveauNombreNuits" min="1">
+              </div>
+              <p>Prix par nuit: {{ reservation.prixParNuit }} MAD</p>
+              <p class="font-weight-bold">Nouveau total: {{ nouveauNombreNuits * reservation.prixParNuit }} MAD</p>
+              
+              <div class="mt-3">
+                <button class="btn btn-success mr-2" (click)="sauvegarderEdition(reservation.id)">Enregistrer</button>
+                <button class="btn btn-secondary" (click)="annulerEdition()">Annuler</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Résumé du panier -->
+    <div class="card mt-4">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-8">
+            <p>Sous-total:</p>
+            <p>Taxes (20%):</p>
+            <h4>Total:</h4>
+          </div>
+          <div class="col-md-4 text-right">
+            <p>{{ total }} MAD</p>
+            <p>{{ total * 0.2 }} MAD</p>
+            <h4>{{ total * 1.2 }} MAD</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Boutons d'action -->
+    <div class="d-flex justify-content-between mt-4">
+      <button class="btn btn-secondary" (click)="continuerShopping()">Continuer mes réservations</button>
+      <div>
+        <button class="btn btn-outline-danger mr-2" (click)="viderPanier()">Vider le panier</button>
+        <button class="btn btn-primary" (click)="validerPanier()">Valider et payer</button>
+      </div>
+    </div>
+  </div>
+</div>

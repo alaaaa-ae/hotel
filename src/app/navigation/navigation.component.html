@@ -1,0 +1,28 @@
+<header class="site-header">
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a [routerLink]="['/home']" class="logo">Hôtel Luxe</a>
+      
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a [routerLink]="['/home']" routerLinkActive="active-link" class="nav-link">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/chambres']" routerLinkActive="active-link" class="nav-link">Chambres</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/panier']" routerLinkActive="active-link" class="nav-link">
+            Panier
+            <span *ngIf="nombreItems > 0" class="panier-badge">{{ nombreItems }}</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/contacts']" routerLinkActive="active-link" class="nav-link">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/login']" routerLinkActive="active-link" class="nav-link">Connexion</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
