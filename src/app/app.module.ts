@@ -14,6 +14,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './services/authentication.service';
 import { NavigationComponent } from './navigation/navigation.component';
+import { PaiementComponent } from './paiement/paiement.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     PanierComponent,
     ContactsComponent,
     LoginComponent,
-    NavigationComponent
+    NavigationComponent,
+    PaiementComponent
   ],
   imports: [
     BrowserModule,

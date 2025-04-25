@@ -1,3 +1,4 @@
+// panier.component.ts - méthode validerPanier() modifiée
 import { Component, OnInit } from '@angular/core';
 import { PanierService } from '../services/panier.service';
 import { Reservation } from '../models/reservation.model';
@@ -11,6 +12,8 @@ import { Router } from '@angular/router';
 export class PanierComponent implements OnInit {
   reservations: Reservation[] = [];
   total: number = 0;
+  editingId: number | null = null;
+  nouveauNombreNuits: number = 1;
 
   constructor(private panierService: PanierService, private router: Router) { }
 
@@ -24,8 +27,6 @@ export class PanierComponent implements OnInit {
       this.total = this.panierService.calculerTotal();
     });
   }
-  editingId: number | null = null;
-  nouveauNombreNuits: number = 1;
   
   commencerEdition(reservation: Reservation): void {
     this.editingId = reservation.id;
@@ -49,6 +50,7 @@ export class PanierComponent implements OnInit {
   formaterDate(date: Date): string {
     return new Date(date).toLocaleDateString('fr-FR');
   }
+  
   supprimerReservation(id: number): void {
     this.panierService.supprimerReservation(id);
   }
@@ -62,9 +64,11 @@ export class PanierComponent implements OnInit {
   }
   
   validerPanier(): void {
-    // Logique de paiement ici
-    alert('Paiement effectué avec succès! Merci pour votre réservation.');
-    this.panierService.viderPanier();
-    this.router.navigate(['/home']);
+    // Rediriger vers la page de paiement au lieu d'afficher une alerte
+    if (this.reservations.length > 0) {
+      this.router.navigate(['/paiement']);
+    } else {
+      alert('Votre panier est vide.');
+    }
   }
 }
